@@ -1,5 +1,4 @@
-use super::color::Color;
-use super::piece::Piece::*;
+use super::piece::Piece;
 use std::mem::discriminant;
 
 pub struct Pos {
@@ -8,7 +7,7 @@ pub struct Pos {
 }
 
 impl Pos {
-    pub fn new(x: u8, y: u8) -> Self {
+    pub fn new(x: usize, y: usize) -> Self {
         Self { x, y }
     }
 }

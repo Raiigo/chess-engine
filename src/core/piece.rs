@@ -1,6 +1,4 @@
-use color;
-
-use super::{color::Color, Color};
+use super::color::Color;
 use Piece::*;
 
 pub enum Piece {
@@ -15,12 +13,12 @@ pub enum Piece {
 impl Piece {
     pub fn color(&self) -> Color {
         match self {
-            King { color, castled } => color,
-            Queen { color } => color,
-            Bishop { color } => color,
-            Knight { color } => color,
-            Rook { color, castled } => color,
-            Pawn { color, en_passant } => color,
+            King { color, castled } => *color,
+            Queen { color } => *color,
+            Bishop { color } => *color,
+            Knight { color } => *color,
+            Rook { color, castled } => *color,
+            Pawn { color, en_passant } => *color,
         }
     }
 }
