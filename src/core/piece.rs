@@ -1,6 +1,7 @@
 use super::color::Color;
 use Piece::*;
 
+#[derive(Copy, Clone)]
 pub enum Piece {
     King { color: Color, castled: bool },
     Queen { color: Color },
@@ -13,12 +14,15 @@ pub enum Piece {
 impl Piece {
     pub fn color(&self) -> Color {
         match self {
-            King { color, castled } => *color,
+            King { color, castled: _ } => *color,
             Queen { color } => *color,
             Bishop { color } => *color,
             Knight { color } => *color,
-            Rook { color, castled } => *color,
-            Pawn { color, en_passant } => *color,
+            Rook { color, castled: _ } => *color,
+            Pawn {
+                color,
+                en_passant: _,
+            } => *color,
         }
     }
 }

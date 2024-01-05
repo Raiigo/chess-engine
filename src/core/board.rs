@@ -1,16 +1,6 @@
 use super::piece::Piece;
+use crate::utils::Pos;
 use std::mem::discriminant;
-
-pub struct Pos {
-    x: usize,
-    y: usize,
-}
-
-impl Pos {
-    pub fn new(x: usize, y: usize) -> Self {
-        Self { x, y }
-    }
-}
 
 pub struct Board {
     content: [[Option<Piece>; 8]; 8],
