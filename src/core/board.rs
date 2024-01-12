@@ -1,9 +1,10 @@
-use super::piece::Piece;
+use super::{color::Color, piece::Piece};
 use crate::utils::Pos;
 use std::mem::discriminant;
 
 pub struct Board {
     content: [[Option<Piece>; 8]; 8],
+    pub trait_color: Color,
 }
 
 impl Board {
