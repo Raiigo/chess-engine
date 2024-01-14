@@ -4,12 +4,14 @@ use super::{board::Board, color::Color};
 use crate::utils::{Pos, Side};
 use SpecialMove::*;
 
+#[derive(Copy, Clone)]
 pub enum SpecialMove {
     Promote(Piece),
     Castle(Side),
     EnPassant,
 }
 
+#[derive(Clone)]
 pub struct Move<'a> {
     /// start_pos is always the position of a piece (in the case of a castle, start_pos is the position of the King)
     pub start_pos: Pos,

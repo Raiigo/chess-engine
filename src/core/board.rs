@@ -30,4 +30,7 @@ impl Board {
         }
         return pos_vec;
     }
+
+    // Check wether or not a square is attacked by a color
+    pub fn is_attacked(&self, pos: Pos, color: Color) -> bool {}
 }

@@ -1,3 +1,4 @@
+#[derive(Copy, Clone)]
 pub enum Side {
     KingSide,
     QueenSide,
@@ -12,6 +13,10 @@ pub struct Pos {
 impl Pos {
     pub fn new(x: usize, y: usize) -> Self {
         Self { x, y }
+    }
+
+    pub fn in_bounds(&self) -> bool {
+        return self.x <= 7 && self.y <= 7;
     }
 
     pub fn std_str(&self) -> String {
